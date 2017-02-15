@@ -32,7 +32,6 @@ describe('Stack', () => {
         .to.alter(() => myStack.length(), { from: 2, to: 1 })
     })
     it('returns the top element in the stack', () => {
-      //at this point, bar should be removed, thus top of the stack is foo
       expect(myStack.pop())
         .to.equal('foo')
     })
