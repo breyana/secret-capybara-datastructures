@@ -9,7 +9,7 @@ class Node {
 
 export default class Stack {
   constructor() {
-    this.top = 0
+    this.top = null
     this.size = 0
   }
 
@@ -36,10 +36,7 @@ export default class Stack {
   }
 
   isEmpty() {
-    if (this.size === 0) {
-      return true
-    }
-    return false
+    return this.size === 0
   }
 
   length() {

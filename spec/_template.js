@@ -4,7 +4,7 @@ import Stack from '../src/stack'
 
 chai.use(chaiChange)
 
-describe('Stack', () => {
+describe.skip('TEMPLATE', () => {
   'use strict'
 
   it('exists', () => {
