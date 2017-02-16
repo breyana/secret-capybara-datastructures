@@ -132,4 +132,4 @@ The interface for the Doubly-Linked List is the same as the Linked List above, _
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Doubly_linked_list) [edited]:
 
-> A linked data structure that consists of a set of sequentially linked records called nodes. Each
+> A linked data structure that consists of a set of sequentially linked records called nodes. Each node contains two fields, called _links_, that are references to the previous and to the next node in the sequence of nodes.
