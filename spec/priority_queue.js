@@ -4,7 +4,7 @@ import PQueue from '../src/priority_queue'
 
 chai.use(chaiChange)
 
-describe.only('Priority Queue', () => {
+describe('Priority Queue', () => {
   'use strict'
 
   it('exists', () => {
