@@ -84,6 +84,7 @@ export default class LinkedList {
           this.size++
           return
         }
+        temp = temp.next
       }
     }
     return -1
@@ -94,33 +95,62 @@ export default class LinkedList {
       if(this.list.data === valueToFind) {
         this.list.next = new Node(valueToPlace, null)
         this.size++
-        console.log('case of one: ', this)
         return
       }
+    } else if (this.list.data === valueToFind) {
+      let theRest = this.list.next
+      this.list.next = new Node(valueToPlace, theRest)
+      this.size++
     } else {
       let temp = this.list
       while(temp.next) {
         if(temp.next.data === valueToFind) {
           temp.next.next = new Node(valueToPlace, temp.next.next)
           this.size++
-          console.log('case of two: ', this);
           return
         }
+        temp = temp.next
       }
     }
     return -1
   }
 
-  remove() {
+  _remove() {
+    /*does not work*/
+    function check(obj) {
+      if(obj.next) {
+        console.log('object.next exists', obj)
+        check(obj.next)
+      } else {
+        console.log('obj.next does not exist', obj);
+        obj = null
+      }
+    }
+    check(this.list)
+    // if (!this.next) {
+    //   this.list = null
+    // } else if (this.next.next) {
+    //   let temp = this.list
+    //   while(temp.next.next) {
+    //     temp = temp.next
+    //   }
+    //   temp.next = null
+    // } else if (this.size === 1){
+    //   this.list = null
+    // }
+    // console.log(this.list)
+    this.size--
 
   }
 
   removeFirst() {
-
+    /*does not work*/
+    this.list = this.list.next
+    this.size--
   }
 
   isEmpty(){
-
+    return this.size === 0
   }
 
   _size() {

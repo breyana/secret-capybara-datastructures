@@ -4,7 +4,7 @@ import LinkedList from '../src/linked_list'
 
 chai.use(chaiChange)
 
-describe.only('Linked List', () => {
+describe('Linked List', () => {
   'use strict'
 
   it('exists', () => {
@@ -135,17 +135,41 @@ describe.only('Linked List', () => {
 
   context('remove()', () => {
     const myLinkedList = new LinkedList()
+    myLinkedList.insert('first')
+    myLinkedList.insert('second')
 
-    it('', () => {
+    it('Removes the tail node from the list', () => {
+      expect(() => myLinkedList._remove())
+        .to.alter(() => myLinkedList._size(), {from: 2, to: 1})
+      expect(myLinkedList.list.data)
+        .to.eql('first')
+    })
+    it('Removes the value if there is only one value in the list', () => {
+      expect(() => myLinkedList._remove())
+        .to.alter(() => myLinkedList._size(), {from: 1, to: 0})
+        expect(myLinkedList.list.data)
+          .to.be.null
     })
   })
 
   context('removeFirst()', () => {
     const myLinkedList = new LinkedList()
+    myLinkedList.insert('first')
+    myLinkedList.insert('second')
 
-    it('', () => {
+    it('Removes the head node from the list', () => {
+      expect(() => myLinkedList._removeFirst())
+        .to.alter(() => myLinkedList._size(), {from: 2, to: 1})
+      expect(myLinkedList.list.data)
+        .to.eql('second')
     })
-  })
+    it('Removes the value if there is only one value in the list', () => {
+      expect(() => myLinkedList._removeFirst())
+        .to.alter(() => myLinkedList._size(), {from: 1, to: 0})
+      expect(myLinkedList.list.data)
+        .to.be.null
+    })
+})
 
   context('isEmpty()', () => {
     const myLinkedList = new LinkedList()
